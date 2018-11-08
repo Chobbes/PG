@@ -346,7 +346,8 @@ the Lisp variable `proof-assistants', or the contents of `proof-assistant-table'
 	     ;; cannot work for more than one prover.
 	     (cond
 	      ((and (boundp 'proof-assistant)
-		    (not (string-equal proof-assistant "")))
+		    (not (string-equal proof-assistant ""))
+                    (not (string-equal proof-assistant ,assistant-name)))
 	       (or (string-equal proof-assistant ,assistant-name)
 		   ;; If Proof General was partially loaded last time
 		   ;; and mode function wasn't redefined, be silent.
